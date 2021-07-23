@@ -48,7 +48,7 @@ class App extends Component {
  }
 
   componentDidMount(){
-    fetch('http://localhost:3000')
+    fetch('https://sleepy-cliffs-47554.herokuapp.com/')
       .then(response => response.json())
       .then(console.log)
       .catch(error => console.error('Error encountered: ', error));
@@ -106,7 +106,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageURL: this.state.input});
-    fetch('http://localhost:3000/imageURL', {
+    fetch('https://sleepy-cliffs-47554.herokuapp.com/imageURL', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -122,7 +122,7 @@ class App extends Component {
       }
       const regions = response.outputs[0].data.regions;
       if(regions){
-        fetch('http://localhost:3000/imageEntry', {
+        fetch('https://sleepy-cliffs-47554.herokuapp.com/imageEntry', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
